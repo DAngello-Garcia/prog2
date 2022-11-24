@@ -3,6 +3,7 @@ package co.edu.uniquindio.ingesis;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 class PersonTest {
@@ -25,7 +26,7 @@ class PersonTest {
 
         System.out.println("ordering...");
 
-        //TODO put here your solution for order the list
+        list.sort(Comparator.comparing(Person::getName).thenComparingInt(Person::getAge));
 
 
         // this line is equivalent to the for in the line 21

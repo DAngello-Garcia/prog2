@@ -1,9 +1,9 @@
 package co.edu.uniquindio.ingesis;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 class PersonTest {
 
@@ -23,8 +23,11 @@ class PersonTest {
         }
 
         System.out.println("mapping...");
+        IntSummaryStatistics summaryStatistics = list.stream().mapToInt(l -> l.getName().length()).summaryStatistics();
 
-        // TODO put here your solution
+        System.out.println("max name lenght " + summaryStatistics.getMax());
+        System.out.println("min name lenght " + summaryStatistics.getMin());
+        System.out.println("average name lenght " + summaryStatistics.getAverage());
 
 
     }

@@ -1,9 +1,12 @@
 package co.edu.uniquindio.ingesis;
 
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class ShapeTest {
 
@@ -25,7 +28,13 @@ class ShapeTest {
 
         System.out.println("solved...");
 
-        // TODO put here your solution
+        List<Square> sq = list.stream().map(l -> l.getClass().equals(new Square(1f))).collect(Collectors.toList());
+        DoubleSummaryStatistics summaryStatistics = sq.stream().mapToDouble(s -> s.computeArea()).summaryStatistics();
+
+        System.out.println("sum area values " + summaryStatistics.getSum());
+        System.out.println("max area values " + summaryStatistics.getMax());
+        System.out.println("min area values " + summaryStatistics.getMin());
+        System.out.println("average area values " + summaryStatistics.getAverage());
 
     }
 }
