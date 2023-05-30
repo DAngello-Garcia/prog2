@@ -95,9 +95,13 @@ Adicione a la tabla las columnas para ver los nuevos campos. Realice las modific
     }
 
     public void onBuscarClick() {
-        llenarTabla(
-                INSTANCE.getBus().buscarFecha(dateFecha.getValue())
-        );
+        if(dateFecha.getValue() != null) {
+            llenarTabla(INSTANCE.getBus().buscarFecha(dateFecha.getValue()));
+        }
+        if(comboClase.getValue() != null) {
+            llenarTabla(INSTANCE.getBus().buscarClase(comboClase.getValue().toString()));
+        }
+
     }
 
     private void llenarCampos(Persona persona) {

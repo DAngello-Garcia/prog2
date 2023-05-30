@@ -23,7 +23,7 @@ public class PersonaUtil {
     }
 
     public static Predicate<Persona> buscarPorFecha(LocalDate fecha){
-        return persona -> persona.getFechaNacimiento().toString().equals(fecha);
+        return persona -> persona.getFechaNacimiento().equals(fecha);
     }
 
     public static Predicate<Persona> buscarPorFechaExacta(LocalDate fecha){

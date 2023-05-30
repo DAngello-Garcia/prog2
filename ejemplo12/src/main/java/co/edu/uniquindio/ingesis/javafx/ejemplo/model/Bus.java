@@ -51,4 +51,10 @@ public class Bus {
                 .filter(PersonaUtil.buscarPorFechaExacta(fecha))
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    public List<Persona> buscarClase(String clase){
+        return personas.stream()
+                .filter(PersonaUtil.buscarPorClase(clase))
+                .collect(Collectors.toUnmodifiableList());
+    }
 }
